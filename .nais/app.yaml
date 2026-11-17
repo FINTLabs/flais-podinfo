@@ -1,0 +1,27 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: flais-podinfo
+spec:
+  port: 9898
+  replicas:
+    min: 1
+    max: 2
+  liveness:
+    path: /healthz
+  readiness:
+    path: /readyz
+  prometheus:
+    enabled: true
+    path: /metrics
+  resources:
+    limits:
+      memory: 128Mi
+    requests:
+      cpu: 10m
+      memory: 64Mi
+  ingresses:
+    - https://podinfo.test.novari.cloud.nais.io
+  env:
+    - name: PODINFO_UI_MESSAGE
+      value: "Hello from Nais!"
