@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: flais-podinfo
 spec:
+  image: "{{image}}"
   port: 9898
   replicas:
     min: 1
