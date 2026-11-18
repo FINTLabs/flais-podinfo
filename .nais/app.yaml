@@ -6,6 +6,9 @@ metadata:
     team: flais
 spec:
   image: "{{image}}"
+  env:
+    - name: PODINFO_OTEL_SERVICE_NAME
+      value: "flais-podinfo"
   port: 9898
   replicas:
     min: 1
