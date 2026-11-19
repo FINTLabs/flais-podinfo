@@ -34,3 +34,5 @@ spec:
       value: "Hello from Nais!"
     - name: PODINFO_OTEL_SERVICE_NAME
       value: "flais-podinfo"
+  envFrom:
+    - secret: test-secret
