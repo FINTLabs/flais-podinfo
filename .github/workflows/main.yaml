@@ -20,7 +20,7 @@ jobs:
         uses: nais/docker-build-push@6394144a53cad0332745f24a8302f5efaf81719a # v.1.0.0
         id: docker-build-push
         with:
-          team: flais
+          team: novari-demo
           tenant: novari
 
   deploy-to-test:

@@ -1,9 +1,9 @@
 apiVersion: nais.io/v1alpha1
 kind: Application
 metadata:
-  name: flais-podinfo
+  name: novari-podinfo
   labels:
-    team: flais
+    team: novari-demo
 spec:
   image: "{{image}}"
   port: 9898
@@ -28,11 +28,9 @@ spec:
       cpu: 10m
       memory: 64Mi
   ingresses:
-    - https://podinfo.test.novari.cloud.nais.io
+    - https://novari-podinfo.test.novari.cloud.nais.io
   env:
     - name: PODINFO_UI_MESSAGE
       value: "Hello from Nais!"
     - name: PODINFO_OTEL_SERVICE_NAME
-      value: "flais-podinfo"
-  envFrom:
-    - secret: test-secret
+      value: "novari-podinfo"
