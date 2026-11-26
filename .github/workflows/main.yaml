@@ -15,9 +15,9 @@ jobs:
     outputs:
       image: ${{ steps.docker-build-push.outputs.image }}
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@v7.0.1
       - name: Build and push image and SBOM to OCI registry
-        uses: nais/docker-build-push@6394144a53cad0332745f24a8302f5efaf81719a # v.1.0.0
+        uses: nais/docker-build-push@v1.0.0
         id: docker-build-push
         with:
           team: novari-demo
@@ -32,7 +32,7 @@ jobs:
       id-token: write
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@v7.0.1
       - uses: nais/deploy/actions/deploy@30ed20fc7021e78d03ca9544b0c561d37f826296 # v3
         env:
           CLUSTER: test
